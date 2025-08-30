@@ -1,0 +1,2715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blossom Prints - Personalized Gifts & Stationery</title>
+    <meta name="description" content="Blossom Prints specializes in personalized birthday cards, table name cards, invitations, kids party packages, stickers, programs, and personalized chocolates.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="hero-carousel-animations.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="pagination-enhancements.css">
+    <link rel="stylesheet" href="filter-panel-enhancements.css">
+    <link rel="stylesheet" href="product-card-enhancements.css">
+    
+    
+    <link rel="stylesheet" href="wishlistmodal.css">
+    <link rel="stylesheet" href="wishlistmodal-notifications.css">
+
+
+    
+    <style>
+/* Gift Cards Page Styles */
+.gifts-hero {
+    text-align: center;
+    margin-bottom: 60px;
+    background: linear-gradient(135deg, #05182d 0%, #ff0000 100%);
+    color: white;
+    padding: 80px 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.gifts-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: float 6s ease-in-out infinite;
+}
+
+.gifts-hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.gifts-hero p {
+    font-size: 20px;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+/* Gift Categories */
+.gift-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+
+.gift-category {
+    background: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    color: #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.gift-category:hover, .gift-category.active {
+    background: linear-gradient(135deg, #05182d 0%, #ff0000 100%);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Business Container */
+.business-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 25px;
+    margin: 0 auto 50px auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 1400px;
+    position: relative;
+}
+
+/* Business Card */
+.business-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+    position: relative;
+    margin: 0 auto;
+}
+
+.business-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.business-image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.business-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+}
+
+.business-content {
+    padding: 30px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.business-name {
+    font-size: 36px;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.business-tagline {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ff6b6b;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.business-description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    flex: 1;
+}
+
+.business-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #666;
+}
+
+.contact-item i {
+    color: #ff6b6b;
+    width: 16px;
+}
+
+.contact-link {
+    background: none;
+    border: none;
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 0;
+}
+
+.contact-link:hover {
+    color: #ff6b6b;
+    text-decoration: underline;
+}
+
+/* Mobile responsiveness for business card */
+@media (max-width: 768px) {
+    .business-container {
+        padding: 0 15px;
+        gap: 25px;
+    }
+
+    .business-card {
+        max-width: 100%;
+        margin: 0 auto;
+        border-radius: 18px;
+    }
+
+    .business-image {
+        height: 200px;
+        padding: 15px;
+    }
+
+    .business-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .business-content {
+        padding: 20px;
+    }
+
+    .business-name {
+        font-size: 24px;
+    }
+
+    .business-tagline {
+        font-size: 14px;
+    }
+
+    .business-description {
+        font-size: 14px;
+    }
+
+    .business-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .business-actions .btn-primary,
+    .business-actions .btn-secondary {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Small mobile devices (phones) */
+@media (max-width: 480px) {
+    .gifts-hero {
+        padding: 40px 20px;
+        margin-bottom: 40px;
+    }
+
+    .gifts-hero h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .gifts-hero p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .business-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 15px;
+        margin: 0 auto 40px auto;
+    }
+
+    .business-card {
+        margin: 0 auto;
+        border-radius: 18px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .business-image {
+        height: 180px;
+        padding: 15px;
+    }
+
+    .business-image img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .business-content {
+        padding: 18px;
+    }
+
+    .business-name {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .business-tagline {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .business-description {
+        font-size: 13px;
+        line-height: 1.4;
+        margin-bottom: 20px;
+    }
+
+    .business-actions {
+        gap: 10px;
+    }
+
+    .business-actions .btn-primary,
+    .business-actions .btn-secondary {
+        padding: 12px 18px;
+        font-size: 13px;
+        border-radius: 20px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+    .gifts-hero {
+        padding: 30px 15px;
+    }
+
+    .gifts-hero h1 {
+        font-size: 28px;
+    }
+
+    .gifts-hero p {
+        font-size: 14px;
+    }
+
+    .business-card {
+        margin: 0 5px;
+    }
+
+    .business-image {
+        height: 160px;
+        padding: 8px;
+    }
+
+    .business-image img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .business-content {
+        padding: 12px;
+    }
+
+    .business-name {
+        font-size: 20px;
+    }
+
+    .business-tagline {
+        font-size: 12px;
+    }
+
+    .business-description {
+        font-size: 12px;
+    }
+
+    .business-actions .btn-primary,
+    .business-actions .btn-secondary {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+}
+
+
+/* Touch-friendly interactions */
+@media (hover: none) and (pointer: coarse) {
+    .business-card:hover {
+        transform: none;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover {
+        transform: none;
+    }
+
+    .btn-primary:active,
+    .btn-secondary:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Landscape orientation for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .business-image {
+        height: 140px;
+    }
+
+    .business-image img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .business-content {
+        padding: 10px;
+    }
+
+    .business-name {
+        font-size: 18px;
+    }
+
+    .business-description {
+        font-size: 12px;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+.gift-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+}
+
+.gift-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.gift-image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.gift-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gift-card:hover .gift-image img {
+    transform: scale(1.05);
+}
+
+.gift-content {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.gift-category-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #05182d 0%, #ff0000 100%);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    align-self: flex-start;
+}
+
+.gift-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.gift-card:hover .gift-title {
+    color: #ff6b6b;
+}
+
+.gift-description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.gift-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.gift-features li {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.gift-features li:before {
+    content: '✓';
+    color: #05182d;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.gift-price {
+    font-size: 24px;
+    font-weight: 800;
+    color: #05182d;
+    margin-bottom: 15px;
+}
+
+.gift-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+    color: #888;
+}
+
+.gift-colors {
+    display: flex;
+    gap: 8px;
+}
+
+.color-option {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.color-option:hover {
+    transform: scale(1.2);
+}
+
+.gift-sizes {
+    font-size: 12px;
+    color: #666;
+}
+
+.gift-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ff0000 0%, #ff0000 100%);
+    color: white;
+    flex: 1;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #666;
+    border: 2px solid #ddd;
+}
+
+.btn-secondary:hover {
+    background: #f5f5f5;
+    border-color: #ccc;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .gifts-hero {
+        padding: 50px 25px;
+        border-radius: 15px;
+        margin-bottom: 30px;
+    }
+
+    .gifts-hero h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .gifts-hero p {
+        font-size: 16px;
+    }
+
+    .gift-categories {
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .gift-category {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .gift-cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    .gift-image {
+        height: 180px;
+    }
+
+    .gift-content {
+        padding: 20px;
+    }
+
+    .gift-title {
+        font-size: 20px;
+    }
+
+    .gift-description {
+        font-size: 15px;
+    }
+
+    .gift-price {
+        font-size: 20px;
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* Product Modal Styles */
+.product-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.product-modal-content {
+    background-color: #fff;
+    margin: 2% auto;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.product-modal-header {
+    padding: 20px 30px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #05182d 0%, #ff0000 100%);
+    color: white;
+    border-radius: 20px 20px 0 0;
+}
+
+.product-modal-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.product-modal-close:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.product-modal-category {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.product-modal-body {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.product-modal-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-modal-image img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.product-modal-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-modal-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.product-modal-price {
+    font-size: 28px;
+    font-weight: 800;
+    color: #05182d;
+    margin-bottom: 25px;
+}
+
+.product-modal-section {
+    margin-bottom: 25px;
+}
+
+.product-modal-section h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+}
+
+.product-modal-section p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.product-modal-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.product-modal-section li {
+    color: #555;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.product-modal-section li:before {
+    content: '✓';
+    color: #08ff5e;
+    font-weight: bold;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.product-modal-colors {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.product-modal-colors .color-option {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.product-modal-colors .color-option:hover {
+    transform: scale(1.2);
+}
+
+.product-modal-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* Business Modal Styles */
+.business-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.business-modal-content {
+    background-color: #fff;
+    margin: 2% auto;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.business-modal-header {
+    padding: 20px 30px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #05182d 0%, #ff0000 100%);
+    color: white;
+    border-radius: 20px 20px 0 0;
+}
+
+.business-modal-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.business-modal-close:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.business-modal-body {
+    padding: 30px;
+}
+
+.business-modal-section {
+    margin-bottom: 30px;
+}
+
+.business-modal-section h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ff6b6b;
+    padding-bottom: 8px;
+}
+
+.business-modal-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.business-modal-section li {
+    color: #555;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.business-modal-section li:before {
+    content: '✓';
+    color: #02ff5a;
+    font-weight: bold;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.business-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.business-gallery img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.business-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+
+.contact-item i {
+    margin-right: 10px;
+    color: #ff6b6b;
+    font-size: 18px;
+}
+
+.contact-item span {
+    font-weight: 600;
+    color: #333;
+}
+
+.business-modal-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* Image Zoom Modal Styles */
+.image-zoom-modal {
+    display: none;
+    position: fixed;
+    z-index: 10001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+}
+
+.image-zoom-modal-content {
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.image-zoom-modal img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.image-zoom-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.image-zoom-modal-close:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Navigation buttons */
+.image-zoom-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    user-select: none;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.image-zoom-nav:hover {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.image-zoom-nav.prev {
+    left: 20px;
+}
+
+.image-zoom-nav.next {
+    right: 20px;
+}
+
+.image-zoom-nav.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.image-zoom-nav.disabled:hover {
+    background: rgba(0, 0, 0, 0.7);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Image counter */
+.image-zoom-counter {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Mobile responsiveness for zoom modal */
+@media (max-width: 768px) {
+    .image-zoom-nav {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+        border-width: 1px;
+    }
+
+    .image-zoom-nav.prev {
+        left: 15px;
+    }
+
+    .image-zoom-nav.next {
+        right: 15px;
+    }
+
+    .image-zoom-modal-close {
+        width: 45px;
+        height: 45px;
+        font-size: 32px;
+        top: 15px;
+        right: 15px;
+    }
+
+    .image-zoom-counter {
+        bottom: 20px;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* Mobile responsiveness for business modal */
+@media (max-width: 768px) {
+    .business-modal-content {
+        margin: 1% auto;
+        width: 95%;
+        max-height: 95vh;
+    }
+
+    .business-modal-header {
+        padding: 15px 20px;
+    }
+
+    .business-modal-body {
+        padding: 20px;
+    }
+
+    .business-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .business-gallery img {
+        height: 100px;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .business-modal-actions {
+        flex-direction: column;
+    }
+
+    .business-modal-actions .btn-primary,
+    .business-modal-actions .btn-secondary {
+        width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <button class="sidebar-toggle" onclick="toggleSidebar()" aria-label="Open menu">☰</button>
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="https://comparehub-smartphone-images.s3.af-south-1.amazonaws.com/IMG_20250625_174144.jpg" alt="CompareHubPrices" class="logo-image">
+                </a>
+            </div>
+            <div class="search-container">
+                <form id="search-form">
+                    <input type="text" name="q" class="search-input" placeholder="Search......." id="searchInput">
+                    <button type="submit" class="search-button" aria-label="Search"><i class="fas fa-search"></i></button>
+                </form>
+                <div class="search-suggestions" id="searchSuggestions">
+                    <div class="suggestions-header">
+                        <span class="all-results">All</span>
+                        <span class="search-query" id="searchQuery">results</span>
+                    </div>
+                    <div class="suggestions-grid" id="suggestionsGrid"></div>
+                </div>
+            </div>
+        </div>
+        <nav class="category-nav">
+            <a href="best-deals.html" class="active"><i class=""></i> Best deals</a>
+            <a href="#new-arrivals"><i class=""></i> New Arrivals</a>
+            <a href="#" id="notifications-link"><i class="fas fa-bell"></i> Notifications</a>
+        </nav>
+    </header>
+
+    <div class="main-container">
+      <nav class="sidebar" id="sidebar">
+            <div class="sidebar-login" id="sidebarLogin"></div>
+            <div class="sidebar-search">
+                <input type="text" placeholder="Search categories..." id="sidebarSearchInput">
+            </div>
+            <div class="sidebar-header">
+                <h3>Browse Categories</h3>
+                <button class="close-sidebar" onclick="closeSidebar()" aria-label="Close menu">&times;</button>
+            </div>
+            
+         
+            <button class="switch-categories-btn" onclick="switchCategoryType()">
+                
+                <span id="switchBtnText">Switch to Essential Goods</span>
+            </button>
+            
+            <div class="category-type" id="categoryType">Electronics</div>
+            
+              <div class="menu-content" id="menuContent">
+                <ul class="menu-items" id="electronicsMenu">
+                  <li class="item">
+                         <div class="submenu-item" onclick="toggleSubmenu(this)">
+                             <span><i class=""></i> Smartphones,Tablets & Accessories</span>
+                             <i class="fa-solid fa-chevron-right"></i>
+                         </div>
+                         <ul class="menu-items submenu">
+                            <li class="item"><a href="smartphones.html" onclick="navigateToSmartphonesByType('all'); return false;">Smartphones</a></li>
+                             <li class="item"><a href="#tablets" onclick="navigateToTabletsByType('all'); return false;">Tablets</a></li>
+                             <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Accessories</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#adapters" onclick="navigateToSmartphonesAccessoriesByType('adapters'); return false;">Adapters</a></li>
+                                     <li class="item"><a href="#powerbanks" onclick="navigateToSmartphonesAccessoriesByType('powerbanks'); return false;">Powerbanks</a></li>
+                                     <li class="item"><a href="#cables" onclick="navigateToSmartphonesAccessoriesByType('cables'); return false;">Cables</a></li>
+                                    
+                                 </ul>
+                             </li>
+                             
+                         </ul>
+                    </li>
+
+                       <li class="item">
+                         <div class="submenu-item" onclick="toggleSubmenu(this)">
+                             <span><i class=""></i> Computers,Laptops & Accessories</span>
+                             <i class="fa-solid fa-chevron-right"></i>
+                         </div>
+                         <ul class="menu-items submenu">
+                             <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Laptops</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#windows" onclick="navigateToLaptopsByType('windows'); return false;">Windows</a></li>
+                                     <li class="item"><a href="#macos" onclick="navigateToLaptopsByType('macos'); return false;">MacOS</a></li>
+                                     <li class="item"><a href="#chromeos" onclick="navigateToLaptopsByType('chromeos'); return false;">ChromeOS</a></li>
+                                 </ul>
+                             </li>
+                             
+                             <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Desktops</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#windows" onclick="navigateToDesktopsByType('windows'); return false;">Windows</a></li>
+                                     <li class="item"><a href="#macos" onclick="navigateToDesktopsByType('macos'); return false;">MacOS</a></li>
+                                 </ul>
+                               </li>
+
+                              
+                               <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Accessories</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="javascript:void(0);" onclick="navigateToLaptopDesktopAccessoriesByType('adapters')">Charges & Adapters</a></li>
+                                     <li class="item"><a href="javascript:void(0);" onclick="navigateToLaptopDesktopAccessoriesByType('usb_hubs')">USB Hubs</a></li>
+                                     <li class="item"><a href="javascript:void(0);" onclick="navigateToLaptopDesktopAccessoriesByType('keyboards')">Keyboards & Mice</a></li>
+                                     <li class="item"><a href="javascript:void(0);" onclick="navigateToLaptopDesktopAccessoriesByType('speakers')">Speakers</a></li>
+                                     <li class="item"><a href="javascript:void(0);" onclick="navigateToLaptopDesktopAccessoriesByType('webcams')">Webcams</a></li>    
+                                 </ul>
+                             </li>
+
+                                <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Data Storage</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#memory-cards" onclick="navigateToDataStorageByType('memory_cards'); return false;">Memory Cards</a></li>
+                                     <li class="item"><a href="#external-drivers" onclick="navigateToDataStorageByType('external_drivers'); return false;">External Drivers</a></li>
+                                    <li class="item"><a href="#usb-drivers" onclick="navigateToDataStorageByType('usb_drivers'); return false;">USB Drivers</a></li>
+                                   
+                                 </ul>
+                             </li>
+ 
+                               <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Componets</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#motherboard" onclick="navigateToComponentsByType('motherboard'); return false;">Motherboard</a></li>
+                                     <li class="item"><a href="#memory-ram" onclick="navigateToComponentsByType('memory_ram'); return false;">Memory(RAM)</a></li>
+                                     <li class="item"><a href="#graphics-card" onclick="navigateToComponentsByType('graphics_card'); return false;">Graphics Card</a></li>
+                                     <li class="item"><a href="#storage" onclick="navigateToComponentsByType('storage'); return false;">Storage</a></li>
+                                    <li class="item"><a href="#cpu" onclick="navigateToComponentsByType('cpu'); return false;">CPU</a></li>
+                                     <li class="item"><a href="#power-supply" onclick="navigateToComponentsByType('power_supply'); return false;">Power Supply</a></li>
+                                 </ul>
+                             </li>   
+
+                           </ul>
+                    </li>
+
+                    
+                  
+
+                       <li class="item">
+                         <div class="submenu-item" onclick="toggleSubmenu(this)">
+                             <span><i class=""></i>Wi-Fi & Networking</span>
+                             <i class="fa-solid fa-chevron-right"></i>
+                         </div>
+                         <ul class="menu-items submenu">
+                             <li class="item"><a href="#routers" onclick="navigateToWifiNetworkingByType('routers'); return false;">Routers</a></li>
+                             <li class="item"><a href="#wifi-ups" onclick="navigateToWifiNetworkingByType('wifi_ups'); return false;">WiFi Ups</a></li>
+                             <li class="item"><a href="#extenders-repeaters" onclick="navigateToWifiNetworkingByType('extenders_repeaters'); return false;">Extenders & Repeaters</a></li>
+                        
+                         </ul>
+                    </li>
+
+                    <li class="item">
+                        <div class="submenu-item" onclick="toggleSubmenu(this)">
+                            <span><i class=""></i> TV & Streaming</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                        <ul class="menu-items submenu">
+                            <li class="item"><a href="javascript:void(0);" onclick="navigateToTVStreamingByType('televisions')">Televisions</a></li>
+                            <li class="item"><a href="javascript:void(0);" onclick="navigateToTVStreamingByType('streaming_devices')">Streaming Devices</a></li>
+                        </ul>
+                    </li>
+
+                       <li class="item">
+                         <div class="submenu-item" onclick="toggleSubmenu(this)">
+                             <span><i class=""></i>Audio</span>
+                             <i class="fa-solid fa-chevron-right"></i>
+                         </div>
+                         <ul class="menu-items submenu">
+                            
+                             <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Earbuds & Headphones</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#earbuds" onclick="navigateToHeadphonesEarbudsByType('earbuds'); return false;">Earbuds</a></li>
+                                     <li class="item"><a href="#headphones" onclick="navigateToHeadphonesEarbudsByType('headphones'); return false;">Headphones</a></li>
+                                 </ul>
+                             </li>
+                             
+                                 <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Portable Speakers</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#bluetooth-speakers" onclick="navigateToPortableSpeakersByType('bluetooth_speakers'); return false;">Bluetooth Speakers</a></li>
+                                     <li class="item"><a href="#party-speakers" onclick="navigateToPortableSpeakersByType('party_speakers'); return false;">Party Speakers</a></li>
+
+                                 </ul>
+                             </li>
+
+
+
+                           <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Home Entertainment Systems</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#hifi-systems" onclick="navigateToHomeEntertainmentByType('hifi_systems'); return false;">Hi-Fi Systems</a></li>
+                                     <li class="item"><a href="#soundbars" onclick="navigateToHomeEntertainmentByType('soundbars'); return false;">Soundbars</a></li>
+                                 </ul>
+                              </li>
+                         </ul>
+                    </li>
+
+                        <li class="item">
+                         <div class="submenu-item" onclick="toggleSubmenu(this)">
+                             <span><i class=""></i>Wearables Devices</span>
+                             <i class="fa-solid fa-chevron-right"></i>
+                         </div>
+                         <ul class="menu-items submenu">
+                             
+                             <li class="item"><a href="#smartwatches" onclick="navigateToWearablesByType('smartwatches'); return false;">Smartwatches</a></li>
+                             <li class="item"><a href="#fitness-trackers" onclick="navigateToWearablesByType('fitness_trackers'); return false;">Fitness Trackers</a></li>
+                             
+                         </ul>
+                    </li>
+
+                       <li class="item">
+                         <div class="submenu-item" onclick="toggleSubmenu(this)">
+                             <span><i class=""></i>Climate Control</span>
+                             <i class="fa-solid fa-chevron-right"></i>
+                         </div>
+                         <ul class="menu-items submenu">
+                         
+                             <li class="item"><a href="#fans" onclick="navigateToClimateControlByType('fans'); return false;">Fans</a></li>
+                             <li class="item"><a href="#air-conditioners" onclick="navigateToClimateControlByType('air_conditioners'); return false;">Air Conditioners</a></li>
+                              <li class="item"><a href="#air-coolers" onclick="navigateToClimateControlByType('air_coolers'); return false;">Air Coolers</a></li>
+                         </ul>
+                    </li>
+
+
+
+                       <li class="item">
+                         <div class="submenu-item" onclick="toggleSubmenu(this)">
+                             <span><i class=""></i>Gaming</span>
+                             <i class="fa-solid fa-chevron-right"></i>
+                         </div>
+                         <ul class="menu-items submenu">
+                            <li class="item"><a href="javascript:void(0);" onclick="navigateToGamingByType('console')">Consoles</a></li>
+                            <li class="item"><a href="javascript:void(0);" onclick="navigateToGamingByType('laptop')">Gaming Laptops</a></li>
+                            <li class="item"><a href="javascript:void(0);" onclick="navigateToGamingByType('pc')">Gaming PCs</a></li>
+                            <li class="item"><a href="javascript:void(0);" onclick="navigateToGamingByType('monitor')">Gaming Monitors</a></li>
+
+                             <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span> XBOX Accessories</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="javascript:void(0);" onclick="navigateToGamingByType('xbox_accessories')">Accessories</a></li>
+                                     
+                                 </ul>
+                             </li>
+
+
+
+                             <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Nintendo Accessories</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="javascript:void(0);" onclick="navigateToGamingByType('nintendo_accessories')">Accessories</a></li>
+                                
+                                 </ul>
+                             </li>
+
+                             <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span> Playstation Accessories</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="javascript:void(0);" onclick="navigateToGamingByType('xbox_accessories')">Accessories</a></li>
+                                    
+                                 </ul>
+                             </li>
+
+
+                             <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span> PC Gaming Accessories</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="javascript:void(0);" onclick="navigateToGamingByType('pc_accessories_keyboards')">Gaming Keyboards & Mouse</a></li>
+                                     <li class="item"><a href="javascript:void(0);" onclick="navigateToGamingByType('pc_accessories_headsets')">Gaming Headsets</a></li>
+                    
+                                 </ul>
+                             </li>
+                             
+                         </ul>
+                    </li>
+
+                      
+                        <li class="item">
+                         <div class="submenu-item" onclick="toggleSubmenu(this)">
+                             <span><i class=""></i>Appliances</span>
+                             <i class="fa-solid fa-chevron-right"></i>
+                         </div>
+                         <ul class="menu-items submenu">
+                             
+                             <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Fridges & Freezers</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#fridges" onclick="navigateToAppliancesByType('fridges'); return false;">Fridges</a></li>
+                                     <li class="item"><a href="#freezers" onclick="navigateToAppliancesByType('freezers'); return false;">Freezers</a></li>
+                                 </ul>
+                             </li>
+                             
+                                <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Microwaves, Ovens & Stoves</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#microwaves" onclick="navigateToAppliancesByType('microwaves'); return false;">Microwaves</a></li>
+                                     <li class="item"><a href="#ovens" onclick="navigateToAppliancesByType('ovens'); return false;">Ovens</a></li>
+                                     <li class="item"><a href="#stoves" onclick="navigateToAppliancesByType('stoves'); return false;">Stoves</a></li>
+                                 </ul>
+                             </li>
+
+
+                                <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Kettles, Coffee Machines</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#kettles" onclick="navigateToAppliancesByType('kettles'); return false;">Kettles</a></li>
+                                     <li class="item"><a href="#coffee-machines" onclick="navigateToAppliancesByType('coffee_machines'); return false;">Coffee Machines</a></li>
+                                    
+                                 </ul>
+                             </li>
+
+
+
+
+                               <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Floorcare</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#vacuum-cleaners" onclick="navigateToAppliancesByType('vacuum_cleaners'); return false;">Vacuum Cleaners</a></li>
+                                     <li class="item"><a href="#robot-vacuums" onclick="navigateToAppliancesByType('robot_vacuums'); return false;">Robot Vacuums</a></li>
+                                 
+                                 </ul>
+                             </li>
+                                
+
+                                <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Food Preparation</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#mixers" onclick="navigateToAppliancesByType('mixers'); return false;">Mixers</a></li>
+                                     <li class="item"><a href="#food-processors" onclick="navigateToAppliancesByType('food_processors'); return false;">Food Processors</a></li>
+                                     <li class="item"><a href="#blenders-juicers" onclick="navigateToAppliancesByType('blenders_juicers'); return false;">Blenders & Juicers</a></li>
+                                 </ul>
+                             </li>
+                                                
+
+
+                               <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Heaters & Electric Blankets</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#heaters" onclick="navigateToAppliancesByType('heaters'); return false;">Heaters</a></li>
+                                     <li class="item"><a href="#electric-blankets" onclick="navigateToAppliancesByType('electric_blankets'); return false;">Electric Blankets</a></li>
+                                 </ul>
+                             </li>
+                               
+                              <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Personal Care</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#electric-shavers" onclick="navigateToAppliancesByType('electric_shavers'); return false;">Electric Shavers</a></li>
+                                     <li class="item"><a href="#hair-care" onclick="navigateToAppliancesByType('hair_care'); return false;">Hair Care</a></li>
+                                 </ul>
+                             </li>
+                               
+                               <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Cookers & Air Fryers</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#air-fryers" onclick="navigateToAppliancesByType('air_fryers'); return false;">Air Fryers</a></li>
+                                     <li class="item"><a href="#grillers" onclick="navigateToAppliancesByType('grillers'); return false;">Grillers</a></li>
+                                    <li class="item"><a href="#cooker-steamers" onclick="navigateToAppliancesByType('cooker_steamers'); return false;">Cooker&Steamers</a></li>
+                                     <li class="item"><a href="#hotplates" onclick="navigateToAppliancesByType('hotplates'); return false;">Hotplates</a></li>
+                                     
+                                 </ul>
+                             </li>
+
+                             <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Toasters & Sandwich Makers</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#toasters" onclick="navigateToAppliancesByType('toasters'); return false;">Toasters</a></li>
+                                     <li class="item"><a href="#sandwich-makers" onclick="navigateToAppliancesByType('sandwich_makers'); return false;">Sandwich Makers</a></li>
+                                     
+                                 </ul>
+                             </li>
+                             
+                             <li class="item"><a href="#dishwashers" onclick="navigateToAppliancesByType('dishwashers'); return false;">Dishwashers</a></li>
+                             <li class="item"><a href="#irons-steamers" onclick="navigateToAppliancesByType('irons_steamers'); return false;">Irons & Steamers</a></li>
+                             <li class="item"><a href="#sewing-machine" onclick="navigateToAppliancesByType('sewing_machine'); return false;">Sewing Machine</a></li>
+                             <li class="item"><a href="#humidifiers-purifiers" onclick="navigateToAppliancesByType('humidifiers_purifiers'); return false;">Humidifiers & Purifiers</a></li>
+                            
+                         </ul>
+                    </li>
+
+
+                       <li class="item">
+                        <div class="submenu-item" onclick="toggleSubmenu(this)">
+                            <span><i class=""></i>Power Solutions</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                        <ul class="menu-items submenu">
+                      
+                            <li class="item"><a href="#ups" onclick="navigateToPowerSolutionsByType('ups'); return false;">UPS</a></li>
+                            <li class="item"><a href="#power-stations" onclick="navigateToPowerSolutionsByType('power_stations'); return false;">Power Stations</a></li>
+                            <li class="item"><a href="#inverters" onclick="navigateToPowerSolutionsByType('inverters'); return false;">Inverters</a></li>
+                            
+                        </ul>
+                    </li>
+
+
+                         
+
+                </ul>
+                
+                
+                <ul class="menu-items" id="foodMenu" style="display: none;">
+                    <li class="item">
+                         <div class="submenu-item" onclick="toggleSubmenu(this)">
+                             <span><i class=""></i>Household</span>
+                             <i class="fa-solid fa-chevron-right"></i>
+                         </div>
+                         <ul class="menu-items submenu">
+                            
+                             <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Cleaning and Hygiene</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#monitors">Bleaches</a></li>
+                                     <li class="item"><a href="#towers">Dishwashing Liquids</a></li>
+                                     <li class="item"><a href="#monitors">Bleaches</a></li>
+                                     <li class="item"><a href="#towers">Air Freshners</a></li>
+                                     <li class="item"><a href="#monitors">Bleaches</a></li>
+                                     <li class="item"><a href="#towers">Headphones</a></li>
+                                 </ul>
+                             </li>
+                             
+                                <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Essential Cleaning Tools</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#monitors">Beef</a></li>
+                                     <li class="item"><a href="#towers">Chicken meat</a></li>
+                                     <li class="item"><a href="#towers">Milk</a></li>
+                                 </ul>
+                             </li>
+
+
+
+                             <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Kitchen Essentials</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#laptop-bags">Kettle & Toasters</a></li>
+                                     <li class="item"><a href="#laptop-cooling">Hotplates</a></li>
+                                     <li class="item"><a href="#stands">Air-fryer</a></li>
+                                 </ul>
+                             </li>
+                             
+                             <li class="item"><a href="#windows-laptops">Insect Control</a></li>
+                             <li class="item"><a href="#macos-laptops">Pet Care</a></li>
+                             <li class="item"><a href="#chrome-os-laptops">Pest control</a></li>
+                         </ul>
+                    </li>
+
+                     <li class="item">
+                         <div class="submenu-item" onclick="toggleSubmenu(this)">
+                             <span><i class=""></i>Foods</span>
+                             <i class="fa-solid fa-chevron-right"></i>
+                         </div>
+                         <ul class="menu-items submenu">
+                            
+                             <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Cleaning and Hygiene</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#monitors">Bleaches</a></li>
+                                     <li class="item"><a href="#towers">Dishwashing Liquids</a></li>
+                                     <li class="item"><a href="#monitors">Bleaches</a></li>
+                                     <li class="item"><a href="#towers">Air Freshners</a></li>
+                                     <li class="item"><a href="#monitors">Bleaches</a></li>
+                                     <li class="item"><a href="#towers">Headphones</a></li>
+                                 </ul>
+                             </li>
+                             
+                                <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Essential Cleaning Tools</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#monitors">Beef</a></li>
+                                     <li class="item"><a href="#towers">Chicken meat</a></li>
+                                     <li class="item"><a href="#towers">Milk</a></li>
+                                 </ul>
+                             </li>
+
+
+
+                             <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Home Appliances</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#laptop-bags">Hi-Fi Systems</a></li>
+                                     <li class="item"><a href="#laptop-cooling">Soundbars</a></li>
+                                     <li class="item"><a href="#stands">Stands</a></li>
+                                 </ul>
+                             </li>
+                             
+                            
+                         </ul>
+                    </li>
+
+
+                      <li class="item">
+                         <div class="submenu-item" onclick="toggleSubmenu(this)">
+                             <span><i class=""></i>Personal Care</span>
+                             <i class="fa-solid fa-chevron-right"></i>
+                         </div>
+                         <ul class="menu-items submenu">
+                            
+                             <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Toiletries</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#monitors">Deodorants</a></li>
+                                     <li class="item"><a href="#towers">Hand Care</a></li>
+                                 </ul>
+                             </li>
+                             
+                                <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Hair Care</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#monitors">Bluetooth Speakers</a></li>
+                                     <li class="item"><a href="#towers">Headphones</a></li>
+                                     <li class="item"><a href="#towers">Radios</a></li>
+                                 </ul>
+                             </li>
+
+
+
+                             <li class="item">
+                                 <div class="submenu-item" onclick="toggleSubmenu(this)">
+                                     <span>Foot Care</span>
+                                     <i class="fa-solid fa-chevron-right"></i>
+                                 </div>
+                                 <ul class="menu-items submenu">
+                                     <li class="item"><a href="#laptop-bags">Hi-Fi Systems</a></li>
+                                     <li class="item"><a href="#laptop-cooling">Soundbars</a></li>
+                                     <li class="item"><a href="#stands">Stands</a></li>
+                                 </ul>
+                             </li>
+                             
+                             
+                         </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+        <main class="content">
+            <!-- Gifts Hero Section -->
+            <div class="gifts-hero">
+                <h1>Local Businesses & Services</h1>
+                <p>Discover amazing local businesses offering personalized services for every special occasion. From custom stationery to fresh baked goods, find the perfect solution to make your moments memorable.</p>
+            </div>
+
+            <!-- Business Cards -->
+            <div id="business-container" class="business-container">
+                <!-- Business cards will be loaded here -->
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Pagination section only -->
+
+    <!-- Pagination -->
+    <div class="pagination-container">
+        <div class="pagination" id="pagination">
+            <button class="page-nav" data-page="prev" aria-label="Previous page">&laquo;</button>
+            <div class="pages">
+                <button class="page-number active">1</button>
+                <button class="page-number">2</button>
+                <button class="page-number">3</button>
+                <button class="page-number">4</button>
+            </div>
+            <button class="page-nav" data-page="next" aria-label="Next page">&raquo;</button>
+        </div>
+    </div>
+
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+    <!-- Business Details Modal -->
+    <div id="businessModal" class="business-modal">
+        <div class="business-modal-content">
+            <div class="business-modal-header">
+                <button class="business-modal-close" id="businessModalClose">&times;</button>
+                <h2>Blossom Prints - Our Services</h2>
+            </div>
+            <div class="business-modal-body">
+                <!-- Services Section -->
+                <div class="business-modal-section">
+                    <h3>Our Services</h3>
+                    <ul id="businessModalServices"></ul>
+                </div>
+
+                <!-- Gallery Section -->
+                <div class="business-modal-section">
+                    <h3>Our Work</h3>
+                    <div class="business-gallery" id="businessModalGallery"></div>
+                </div>
+
+                <!-- Why Choose Us Section -->
+                <div class="business-modal-section">
+                    <h3>Why Choose Us</h3>
+                    <ul id="businessModalWhyChooseUs"></ul>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="business-modal-section">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info" id="businessModalContact"></div>
+                </div>
+
+                <div class="business-modal-actions">
+                    <button class="btn-secondary" onclick="closeBusinessModal()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Zoom Modal -->
+    <div id="imageZoomModal" class="image-zoom-modal">
+        <div class="image-zoom-modal-content">
+            <span class="image-zoom-modal-close" onclick="closeImageZoom()">&times;</span>
+            <button class="image-zoom-nav prev" onclick="navigateZoomImage(-1)">&#10094;</button>
+            <button class="image-zoom-nav next" onclick="navigateZoomImage(1)">&#10095;</button>
+            <img id="zoomedImage" src="" alt="Zoomed Image">
+            <div class="image-zoom-counter" id="imageZoomCounter">1 of 1</div>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div class="notification-container" id="notificationContainer"></div>
+<!-- Mobile Search Modal -->
+    <div class="mobile-search-modal" id="mobileSearchModal">
+        <div class="mobile-search-modal-header">
+            <span class="mobile-search-close" id="mobileSearchClose">&times;</span>
+            <form class="mobile-search-form" id="mobileSearchForm">
+                <input type="text" class="mobile-search-input" id="mobileSearchInput" placeholder="Search...">
+                <button type="submit" class="mobile-search-button"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        <div class="mobile-search-suggestions" id="mobileSearchSuggestions">
+            <div class="mobile-suggestions-header">
+                <span class="mobile-all-results">All</span>
+                <span class="mobile-search-query" id="mobileSearchQuery">results</span>
+            </div>
+            <div class="mobile-suggestions-grid" id="mobileSuggestionsGrid"></div>
+        </div>
+    </div>
+    
+  
+   
+    
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About CompareHubPrices</h3>
+                <ul>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="gifts.html">Gift Cards</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Help & Support</h3>
+                <ul>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="FAQs.html">FAQs</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="Terms-of-Service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="newsletter-section">
+                    <h4>Get the Best Deals in Your Inbox</h4>
+                    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                        <input type="email" placeholder="Enter your email address" required aria-label="Email address for newsletter">
+                        <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CompareHub Prices. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-banner-content">
+            <div class="cookie-banner-text">
+                <i class="fas fa-cookie-bite"></i>
+                <span>This website uses cookies to provide you with the best experience. By continuing to use this site, you agree to our use of cookies.</span>
+            </div>
+            <div class="cookie-banner-actions">
+                <button class="cookie-banner-btn accept-btn" onclick="acceptCookies()">Accept</button>
+                <button class="cookie-banner-btn decline-btn" onclick="declineCookies()">Decline</button>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Search suggestions functionality -->
+<script src="search-suggestions.js"></script>
+
+<!-- Account authentication functionality -->
+<script src="account-authentication.js"></script>
+<script src="content-padding.js"></script>
+<!-- Notifications functionality -->
+<script src="notifications.js"></script>
+<!-- Wishlist functionality -->
+<script src="wishlist.js"></script>
+<script src="mobile-search.js"></script>
+
+<!-- Sidebar functionality -->
+<script src="sidebar.js"></script>
+
+<!-- Gift cards data and functionality -->
+<script src="gifts.js"></script>
+
+<!-- Business card display functionality -->
+<script>
+    // Pagination state
+    let currentPage = 1;
+    let allBusinesses = []; // Store all businesses for pagination
+
+    // Function to render business cards with pagination (6 per page)
+    function renderBusinessCards(businesses, page = 1) {
+        const container = document.getElementById('business-container');
+        if (!businesses || businesses.length === 0) return;
+
+        // Calculate start and end indices for current page
+        const businessesPerPage = 6;
+        const startIndex = (page - 1) * businessesPerPage;
+        const endIndex = startIndex + businessesPerPage;
+        const businessesToShow = businesses.slice(startIndex, endIndex);
+
+        let html = '';
+
+        businessesToShow.forEach(business => {
+            html += `
+                <div class="business-card">
+                    <div class="business-image">
+                        <img src="${business.image}" alt="${business.name}">
+                    </div>
+                    <div class="business-content">
+                        <h2 class="business-name">${business.name}</h2>
+                        <p class="business-tagline">${business.tagline}</p>
+                        <p class="business-description">${business.shortDescription}</p>
+                        <div class="business-actions">
+                            <button class="btn-primary" onclick="viewBusinessDetails('${business.id}')">
+                                Read More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        container.innerHTML = html;
+
+        // Update pagination controls
+        updatePaginationControls(businesses.length, page);
+    }
+
+    // Function to update pagination controls
+    function updatePaginationControls(totalBusinesses, currentPage) {
+        const paginationContainer = document.getElementById('pagination');
+
+        // Calculate total pages needed (6 businesses per page)
+        const totalPages = Math.ceil(totalBusinesses / 6);
+
+        if (totalPages <= 1) {
+            paginationContainer.style.display = 'none';
+            return;
+        }
+
+        paginationContainer.style.display = 'flex';
+
+        // Update page numbers
+        const pagesContainer = paginationContainer.querySelector('.pages');
+        let pagesHtml = '';
+
+        // Show all available pages
+        for (let i = 1; i <= totalPages; i++) {
+            pagesHtml += `<button class="page-number ${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</button>`;
+        }
+
+        pagesContainer.innerHTML = pagesHtml;
+
+        // Update prev/next buttons
+        const prevBtn = paginationContainer.querySelector('.page-nav[data-page="prev"]');
+        const nextBtn = paginationContainer.querySelector('.page-nav[data-page="next"]');
+
+        prevBtn.style.opacity = currentPage === 1 ? '0.5' : '1';
+        nextBtn.style.opacity = currentPage === totalPages ? '0.5' : '1';
+
+        // Add event listeners to page buttons
+        document.querySelectorAll('.page-number').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const page = parseInt(this.dataset.page);
+                goToPage(page);
+            });
+        });
+
+        // Update prev/next functionality
+        prevBtn.onclick = () => currentPage > 1 && goToPage(currentPage - 1);
+        nextBtn.onclick = () => currentPage < totalPages && goToPage(currentPage + 1);
+    }
+
+    // Function to go to specific page
+    function goToPage(page) {
+        currentPage = page;
+        renderBusinessCards(allBusinesses, page);
+    }
+
+    // Function to open WhatsApp
+    function openWhatsApp(phoneNumber) {
+        try {
+            // Clean the phone number by removing all non-digit characters
+            const cleanPhoneNumber = phoneNumber.replace(/\D/g, '');
+
+            if (cleanPhoneNumber.length < 10) {
+                alert('Invalid phone number format.');
+                return;
+            }
+
+            // Create WhatsApp URL
+            const whatsappUrl = `https://wa.me/${cleanPhoneNumber}`;
+
+            // Open WhatsApp in new tab
+            window.open(whatsappUrl, '_blank');
+
+            console.log(`Opening WhatsApp for ${phoneNumber}`);
+        } catch (error) {
+            console.error('Error opening WhatsApp:', error);
+            alert('Unable to open WhatsApp. Please try again.');
+        }
+    }
+
+    // Function to open TikTok profile
+    function openTikTok(username) {
+        try {
+            // Remove @ symbol if present
+            const cleanUsername = username.replace('@', '');
+
+            // Create TikTok URL
+            const tiktokUrl = `https://tiktok.com/${cleanUsername}`;
+
+            // Open TikTok in new tab
+            window.open(tiktokUrl, '_blank');
+
+            console.log(`Opening TikTok profile: ${username}`);
+        } catch (error) {
+            console.error('Error opening TikTok:', error);
+            alert('Unable to open TikTok. Please try again.');
+        }
+    }
+
+    // Function to open Instagram profile
+    function openInstagram(username) {
+        try {
+            // Remove @ symbol if present
+            const cleanUsername = username.replace('@', '');
+
+            // Create Instagram URL
+            const instagramUrl = `https://instagram.com/${cleanUsername}`;
+
+            // Open Instagram in new tab
+            window.open(instagramUrl, '_blank');
+
+            console.log(`Opening Instagram profile: ${username}`);
+        } catch (error) {
+            console.error('Error opening Instagram:', error);
+            alert('Unable to open Instagram. Please try again.');
+        }
+    }
+
+    // Function to open location in Google Maps
+    function openLocation(location) {
+        try {
+            // Create Google Maps URL
+            const mapsUrl = `https://maps.google.com/?q=${encodeURIComponent(location)}`;
+
+            // Open Google Maps in new tab
+            window.open(mapsUrl, '_blank');
+
+            console.log(`Opening location: ${location}`);
+        } catch (error) {
+            console.error('Error opening location:', error);
+            alert('Unable to open location. Please try again.');
+        }
+    }
+
+    // Function to view business details in modal
+    function viewBusinessDetails(businessId) {
+        console.log('viewBusinessDetails called with:', businessId); // Debug log
+        let business;
+        switch(businessId) {
+            case 'alice-cake-factory':
+                business = aliceCakeFactoryData;
+                break;
+            case 'mnandis-catering':
+                business = mnandisCateringData;
+                break;
+            case 'tkeey-hampers':
+                business = tkeeyHampersData;
+                break;
+            case 'mash-gift-cards':
+                business = mashGiftCardsData;
+                break;
+            case 'siphos-printing':
+                business = siphosPrintingData;
+                break;
+            case 'nomsas-beauty':
+                business = nomsasBeautyData;
+                break;
+            case 'thabos-auto':
+                business = thabosAutoData;
+                break;
+            default:
+                business = businessData;
+        }
+
+        console.log('Business data loaded:', business.name); // Debug log
+
+        // Populate modal with business data
+        console.log('Opening modal for business:', business.name); // Debug log
+        document.getElementById('businessModal').style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        console.log('Modal should now be visible'); // Debug log
+
+        // Update modal title
+        document.querySelector('#businessModal h2').textContent = `${business.name} - Our Services`;
+
+        // Services list
+        const servicesHtml = business.services.map(service => `<li>${service}</li>`).join('');
+        document.getElementById('businessModalServices').innerHTML = servicesHtml;
+
+        // Gallery images with zoom functionality
+        const galleryHtml = business.galleryImages.map((image, index) =>
+            `<img src="${image}" alt="${business.name} Work" onclick="openImageZoom('${image}', '${business.name} Work', ${index}, '${business.id}')" style="cursor: pointer;">`
+        ).join('');
+        document.getElementById('businessModalGallery').innerHTML = galleryHtml;
+
+        // Why Choose Us list
+        const whyChooseUsHtml = business.whyChooseUs.map(reason => `<li>${reason}</li>`).join('');
+        document.getElementById('businessModalWhyChooseUs').innerHTML = whyChooseUsHtml;
+
+        // Contact information with clickable functions
+        const contactHtml = `
+            <div class="contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <button onclick="openWhatsApp('${business.contactInfo.whatsapp}')" class="contact-link">${business.contactInfo.whatsapp}</button>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-tiktok"></i>
+                <button onclick="openTikTok('${business.contactInfo.tiktok}')" class="contact-link">${business.contactInfo.tiktok}</button>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-instagram"></i>
+                <button onclick="openInstagram('${business.contactInfo.instagram}')" class="contact-link">${business.contactInfo.instagram}</button>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <button onclick="openLocation('${business.contactInfo.location}')" class="contact-link">${business.contactInfo.location}</button>
+            </div>
+        `;
+        document.getElementById('businessModalContact').innerHTML = contactHtml;
+    }
+
+    // Function to contact business
+    function contactBusiness(businessId) {
+        try {
+            let business;
+            switch(businessId) {
+                case 'alice-cake-factory':
+                    business = aliceCakeFactoryData;
+                    break;
+                case 'mnandis-catering':
+                    business = mnandisCateringData;
+                    break;
+                case 'tkeey-hampers':
+                    business = tkeeyHampersData;
+                    break;
+                case 'mash-gift-cards':
+                    business = mashGiftCardsData;
+                    break;
+                case 'siphos-printing':
+                    business = siphosPrintingData;
+                    break;
+                case 'nomsas-beauty':
+                    business = nomsasBeautyData;
+                    break;
+                case 'thabos-auto':
+                    business = thabosAutoData;
+                    break;
+                default:
+                    business = businessData;
+            }
+
+            if (!business || !business.contactInfo || !business.contactInfo.whatsapp) {
+                alert('Contact information not available for this business.');
+                return;
+            }
+
+            // Clean the phone number by removing all non-digit characters
+            const phoneNumber = business.contactInfo.whatsapp.replace(/\D/g, '');
+
+            if (phoneNumber.length < 10) {
+                alert('Invalid phone number format.');
+                return;
+            }
+
+            // Create WhatsApp URL
+            const whatsappUrl = `https://wa.me/${phoneNumber}`;
+
+            // Open WhatsApp in new tab
+            window.open(whatsappUrl, '_blank');
+
+            // Optional: Show success message
+            console.log(`Opening WhatsApp for ${business.name}`);
+        } catch (error) {
+            console.error('Error opening WhatsApp:', error);
+            alert('Unable to open WhatsApp. Please try again.');
+        }
+    }
+
+    // Function to close business modal
+    function closeBusinessModal() {
+        document.getElementById('businessModal').style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore background scrolling
+    }
+
+    // Global variables for zoom navigation
+    let currentZoomImages = [];
+    let currentZoomIndex = 0;
+
+    // Function to open image zoom modal
+    function openImageZoom(imageSrc, altText, imageIndex = 0, businessId = '') {
+        console.log('openImageZoom called with:', imageSrc, altText, imageIndex, businessId);
+
+        const zoomModal = document.getElementById('imageZoomModal');
+        const zoomedImage = document.getElementById('zoomedImage');
+        const counter = document.getElementById('imageZoomCounter');
+        const prevBtn = document.querySelector('.image-zoom-nav.prev');
+        const nextBtn = document.querySelector('.image-zoom-nav.next');
+
+        if (!zoomModal || !zoomedImage || !counter) {
+            console.error('Zoom modal elements not found');
+            return;
+        }
+
+        // Get business data and gallery images
+        let business;
+        switch(businessId) {
+            case 'blossom-prints':
+                business = businessData;
+                break;
+            case 'alice-cake-factory':
+                business = aliceCakeFactoryData;
+                break;
+            case 'mnandis-catering':
+                business = mnandisCateringData;
+                break;
+            case 'tkeey-hampers':
+                business = tkeeyHampersData;
+                break;
+            case 'mash-gift-cards':
+                business = mashGiftCardsData;
+                break;
+            case 'siphos-printing':
+                business = siphosPrintingData;
+                break;
+            case 'nomsas-beauty':
+                business = nomsasBeautyData;
+                break;
+            case 'thabos-auto':
+                business = thabosAutoData;
+                break;
+            default:
+                business = businessData;
+        }
+
+        // Store current gallery data
+        currentZoomImages = business.galleryImages || [];
+        currentZoomIndex = imageIndex;
+
+        // Update image
+        zoomedImage.src = imageSrc;
+        zoomedImage.alt = altText;
+
+        // Update counter
+        counter.textContent = `${currentZoomIndex + 1} of ${currentZoomImages.length}`;
+
+        // Update navigation buttons
+        updateZoomNavigationButtons();
+
+        // Show modal
+        zoomModal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
+        console.log('Zoom modal opened successfully');
+    }
+
+    // Function to navigate zoom images
+    function navigateZoomImage(direction) {
+        if (currentZoomImages.length === 0) return;
+
+        const newIndex = currentZoomIndex + direction;
+
+        // Check bounds
+        if (newIndex < 0 || newIndex >= currentZoomImages.length) return;
+
+        currentZoomIndex = newIndex;
+
+        const zoomModal = document.getElementById('imageZoomModal');
+        const zoomedImage = document.getElementById('zoomedImage');
+        const counter = document.getElementById('imageZoomCounter');
+
+        // Update image
+        zoomedImage.src = currentZoomImages[currentZoomIndex];
+        zoomedImage.alt = `Zoomed Image ${currentZoomIndex + 1}`;
+
+        // Update counter
+        counter.textContent = `${currentZoomIndex + 1} of ${currentZoomImages.length}`;
+
+        // Update navigation buttons
+        updateZoomNavigationButtons();
+    }
+
+    // Function to update navigation button states
+    function updateZoomNavigationButtons() {
+        const prevBtn = document.querySelector('.image-zoom-nav.prev');
+        const nextBtn = document.querySelector('.image-zoom-nav.next');
+
+        // Enable/disable previous button
+        if (currentZoomIndex === 0) {
+            prevBtn.classList.add('disabled');
+        } else {
+            prevBtn.classList.remove('disabled');
+        }
+
+        // Enable/disable next button
+        if (currentZoomIndex === currentZoomImages.length - 1) {
+            nextBtn.classList.add('disabled');
+        } else {
+            nextBtn.classList.remove('disabled');
+        }
+    }
+
+    // Function to close image zoom modal
+    function closeImageZoom() {
+        const zoomModal = document.getElementById('imageZoomModal');
+        zoomModal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore background scrolling
+    }
+
+    // Load business cards when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        // Load all business cards (8 businesses total)
+        const businesses = [
+            businessData,
+            aliceCakeFactoryData,
+            mnandisCateringData,
+            tkeeyHampersData,
+            mashGiftCardsData,
+            siphosPrintingData,
+            nomsasBeautyData,
+            thabosAutoData
+        ];
+
+        // Store all businesses for pagination
+        allBusinesses = businesses;
+
+        // Render first page (6 businesses)
+        renderBusinessCards(businesses, 1);
+
+        // Check for business parameter in URL and open modal if present
+        const urlParams = new URLSearchParams(window.location.search);
+        const businessParam = urlParams.get('business');
+        console.log('Business parameter detected:', businessParam); // Debug log
+        if (businessParam) {
+            // Use a longer delay and ensure modal elements exist
+            setTimeout(() => {
+                console.log('Attempting to open modal for:', businessParam); // Debug log
+                // Check if modal elements exist before trying to open
+                const modal = document.getElementById('businessModal');
+                if (modal) {
+                    viewBusinessDetails(businessParam);
+                } else {
+                    console.error('Business modal not found');
+                }
+            }, 1000); // Longer delay to ensure everything is loaded
+        }
+
+        // Add modal event listeners
+        document.getElementById('businessModalClose').addEventListener('click', closeBusinessModal);
+
+        // Close modal when clicking outside
+        document.getElementById('businessModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeBusinessModal();
+            }
+        });
+
+        // Close modal with Escape key and handle arrow key navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && document.getElementById('businessModal').style.display === 'block') {
+                closeBusinessModal();
+            }
+            if (e.key === 'Escape' && document.getElementById('imageZoomModal').style.display === 'block') {
+                closeImageZoom();
+            }
+
+            // Handle arrow key navigation in zoom modal
+            if (document.getElementById('imageZoomModal').style.display === 'block') {
+                if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    navigateZoomImage(-1);
+                } else if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    navigateZoomImage(1);
+                }
+            }
+        });
+
+        // Close zoom modal when clicking outside the image
+        document.getElementById('imageZoomModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeImageZoom();
+            }
+        });
+    });
+</script>
+
+
+
+
+<!-- Forgot Password Modal JavaScript -->
+
+    <!-- Login Modal -->
+    <div class="login-modal" id="loginModal">
+        <div class="login-modal-container">
+            <div class="login-modal-header">
+                <button class="login-modal-close" id="loginModalClose">&times;</button>
+                <div class="login-modal-logo-container">
+                    <img src="https://comparehub-smartphone-images.s3.af-south-1.amazonaws.com/IMG_20250625_174144.jpg" alt="Logo">
+                </div>
+            </div>
+            <div class="login-modal-form-container">
+                <div class="login-modal-form-header">
+                    <h2>Welcome Back</h2>
+                    <p>Please sign in to your account to continue</p>
+                </div>
+                
+                <div id="loginAlertContainer"></div>
+                <form class="login-modal-form" id="loginModalForm">
+                    <div class="login-modal-form-group">
+                        <label for="loginModalEmail">Email Address</label>
+                        <input type="email" id="loginModalEmail" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="login-modal-form-group">
+                        <label for="loginModalPassword">Password</label>
+                        <div class="login-modal-input-wrapper">
+                            <input type="password" id="loginModalPassword" name="password" placeholder="Enter your password" required>
+                            <button type="button" class="login-modal-password-toggle" id="loginModalPasswordToggle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="login-modal-forgot-password">
+                        <a href="#" id="loginModalForgotPassword">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="login-modal-btn" id="loginModalBtn">
+                        <span id="loginModalBtnText">Sign In</span>
+                        <div class="login-modal-spinner" id="loginModalSpinner" style="display: none;"></div>
+                    </button>
+                </form>
+                <div class="login-modal-register-link">
+                    Don't have an account? <a href="#" id="loginModalRegisterLink">Sign up here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="register-modal" id="registerModal">
+        <div class="register-modal-container">
+            <div class="register-modal-header">
+                <button class="register-modal-close" id="registerModalClose">&times;</button>
+                <div class="register-modal-logo-container">
+                    <img src="https://comparehub-smartphone-images.s3.af-south-1.amazonaws.com/IMG_20250625_174144.jpg"
+                         alt="CompareHub Logo">
+                </div>
+            </div>
+            
+            <div class="register-modal-form-container">
+                <div class="register-modal-form-header">
+                    <h2>Create Account</h2>
+                    <p>Join thousands saving money with smart comparisons</p>
+                </div>
+                
+                <div id="registerAlertContainer"></div>
+                
+                <form id="registerModalForm" autocomplete="off">
+                    <div class="register-modal-form-group">
+                        <div class="register-modal-input-group">
+                            <input type="text" class="register-modal-input" id="registerFirstname" placeholder="First Name" required>
+                            <i class="fas fa-user register-modal-input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="register-modal-form-group">
+                        <div class="register-modal-input-group">
+                            <input type="text" class="register-modal-input" id="registerLastname" placeholder="Last Name" required>
+                            <i class="fas fa-user register-modal-input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="register-modal-form-group">
+                        <div class="register-modal-input-group">
+                            <input type="email" class="register-modal-input" id="registerEmail" placeholder="Email Address" required>
+                            <i class="fas fa-envelope register-modal-input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="register-modal-form-group">
+                        <div class="register-modal-input-group">
+                            <input type="password" class="register-modal-input" id="registerPassword" placeholder="Password" required>
+                            <button type="button" class="register-modal-password-toggle" onclick="toggleRegisterPassword('registerPassword')">
+                                <i class="fas fa-eye" id="registerPassword-eye"></i>
+                            </button>
+                        </div>
+                        <div class="register-modal-password-strength">
+                            <div class="register-modal-strength-title">Password Requirements</div>
+                            <div class="register-modal-strength-indicators">
+                                <div class="register-modal-strength-item" id="register-length-check">
+                                    <i class="fas fa-times"></i>
+                                    <span>8+ characters</span>
+                                </div>
+                                <div class="register-modal-strength-item" id="register-upper-check">
+                                    <i class="fas fa-times"></i>
+                                    <span>Uppercase letter</span>
+                                </div>
+                                <div class="register-modal-strength-item" id="register-number-check">
+                                    <i class="fas fa-times"></i>
+                                    <span>Number</span>
+                                </div>
+                                <div class="register-modal-strength-item" id="register-special-check">
+                                    <i class="fas fa-times"></i>
+                                    <span>Special character</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="register-modal-form-group">
+                        <div class="register-modal-input-group">
+                            <input type="password" class="register-modal-input" id="registerConfirmPassword" placeholder="Confirm Password" required>
+                            <button type="button" class="register-modal-password-toggle" onclick="toggleRegisterPassword('registerConfirmPassword')">
+                                <i class="fas fa-eye" id="registerConfirmPassword-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="register-modal-checkbox-group">
+                        <div class="register-modal-checkbox">
+                            <input type="checkbox" id="registerTerms" required style="position: absolute; opacity: 0; cursor: pointer; height: 100%; width: 100%; margin: 0; z-index: 1;">
+                            <div class="register-modal-checkmark"></div>
+                        </div>
+                        <label for="registerTerms" class="register-modal-checkbox-label" style="cursor: pointer;">
+                            I agree to the <a href="Terms-of-Service.html" target="_blank" style="pointer-events: auto;">Terms of Service</a> and <a href="privacy-policy.html" target="_blank" style="pointer-events: auto;">Privacy Policy</a>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="register-modal-btn" id="registerModalBtn">
+                        <i class="fas fa-user-plus"></i>
+                        <span id="registerModalBtnText">Create Account</span>
+                        <div class="register-modal-spinner" id="registerModalSpinner" style="display: none;"></div>
+                    </button>
+                </form>
+                
+                <div class="register-modal-divider">
+                    <span>Already have an account?</span>
+                </div>
+                
+                <div class="register-modal-login-link">
+                    <a href="#" id="registerModalLoginLink">
+                        <i class="fas fa-arrow-left"></i> Sign in instead
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgotPasswordModal" class="forgot-password-modal">
+        <div class="forgot-password-modal-container">
+            <div class="forgot-password-modal-header">
+                <button class="forgot-password-modal-close" onclick="closeForgotPasswordModal()">&times;</button>
+                <div class="forgot-password-modal-icon">
+                    <i class="fas fa-key"></i>
+                </div>
+            </div>
+            <div class="forgot-password-modal-form-container">
+                <div class="forgot-password-modal-form-header">
+                    <h2>Reset Password</h2>
+                    <p>Enter your email address and we'll send you a code to reset your password.</p>
+                </div>
+                
+                <div id="forgotPasswordAlert" class="forgot-password-modal-alert" style="display: none;"></div>
+                
+                <form id="forgotPasswordForm">
+                    <div class="forgot-password-modal-form-group">
+                        <label for="forgotPasswordEmail">Email Address</label>
+                        <input
+                            type="email"
+                            id="forgotPasswordEmail"
+                            name="email"
+                            placeholder="Enter your email address"
+                            required
+                        >
+                    </div>
+                    
+                    <button type="submit" class="forgot-password-modal-btn" id="forgotPasswordBtn">
+                        <span id="forgotPasswordBtnText">Send Reset Code</span>
+                        <div id="forgotPasswordSpinner" class="forgot-password-modal-spinner" style="display: none;"></div>
+                    </button>
+                </form>
+                
+                <div class="forgot-password-modal-back-link">
+                    <a href="#" onclick="closeForgotPasswordModal(); showLoginModal();">Back to Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+    
+  
+
+</body>
+</html>
